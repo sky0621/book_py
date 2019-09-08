@@ -1,3 +1,7 @@
+from store_info import StoreInfo
+from commands import Commands
+
+
 def usage():
     msg = """
 [usage]
@@ -12,6 +16,9 @@ help   ... ヘルプ情報（当内容と同じ）を表示します。
 
 """
     print(msg)
+
+
+commands = Commands(StoreInfo("store.json"))
 
 
 # -------------------------------------------------------------------
@@ -29,15 +36,16 @@ while True:
         print("End!")
         exit()
 
-    # ヘルプ
-    if cmd == "help":
-        usage()
-        continue
-
     # 以降は、引数ありコマンドの処理
     cmds = cmd.split()
     if len(cmds) < 1:
         usage()
+        continue
+
+    # ヘルプ
+    if cmd == "help":
+        # usage()
+        commands.exec(cmds[0], "")
         continue
 
     # 保存
