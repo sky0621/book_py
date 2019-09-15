@@ -2,7 +2,7 @@ from command import Command
 
 
 class Help(Command):
-    def exec(self, *args):
+    def exec(self, args):
         msg = """
         [usage]
         キーバリュー形式で文字列情報を管理するコマンドです。

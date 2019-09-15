@@ -3,5 +3,5 @@
 
 
 class Command:
-    def exec(self, *args):
+    def exec(self, args):
         raise NotImplementedError
