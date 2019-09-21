@@ -18,3 +18,4 @@ class Help(Command):
 
         """
         print(msg)
+        return True

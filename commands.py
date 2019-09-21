@@ -1,13 +1,13 @@
 import os
 
-from store_info import StoreInfo
-from end import End
-from help import Help
 from clear import Clear
-from save import Save
+from end import End
 from get import Get
-from remove import Remove
+from help import Help
 from list import List
+from remove import Remove
+from save import Save
+from store_info import StoreInfo
 
 
 class Commands:
@@ -27,15 +27,14 @@ class Commands:
     def exec(self, cmds):
         if len(cmds) < 1:
             print("no target")
-            return
+            return True
 
         c = self.commands.get(cmds[0])
         if c is None:
             print("no target")
-            return
+            return True
 
         if len(cmds) == 1:
-            c.exec([])
-            return
+            return c.exec([])
         else:
-            c.exec(cmds[1:])
+            return c.exec(cmds[1:])

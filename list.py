@@ -10,3 +10,4 @@ class List(Command):
             print('"key","value"')
             for k, v in json_data.items():
                 print(f'"{k}","{v}"')
+        return True
