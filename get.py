@@ -1,13 +1,9 @@
 import json
 
 from command import Command
-from store_info import StoreInfo
 
 
 class Get(Command):
-    def __init__(self, store_info: StoreInfo):
-        self.store_info = store_info
-
     def exec(self, args):
         if len(args) != 1:
             print("not valid")
